@@ -7,6 +7,15 @@ services:
       context: src
       dockerfile: ./Dockerfile
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 3000:3000
+      - 9229:9229
+    volumes: 
+      - ./src/bin:/usr/src/app/bin
+      - ./docker/config:/usr/src/app/config
+      - ./src/public:/usr/src/app/public
+      - ./src/routes:/usr/src/app/routes
+      - ./src/views:/usr/src/app/views
+      - ./src/app.js:/usr/src/app/app.js
+    command: ["nodemon", "--inspect=0.0.0.0:9229", "./bin/www"]
