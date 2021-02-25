@@ -13,7 +13,7 @@ services:
       - 9229:9229
     volumes: 
       - ./src/bin:/usr/src/app/bin
-      - ./src/config:/usr/src/app/config
+      - ./docker/config:/usr/src/app/config
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
       - ./src/tests/:/usr/src/app/tests/

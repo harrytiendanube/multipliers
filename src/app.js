@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes');
-// const config = require('./config')
+const config = require('./config')
 
 var app = express();
 
@@ -13,8 +13,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// app.use(logger(config.logger.format || 'dev'));
-app.use(logger('dev'));
+app.use(logger(config.logger.format || 'dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
