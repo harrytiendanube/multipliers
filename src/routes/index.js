@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const healthRouter = require('./health')
+const usersRouter = require('./users')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-module.exports = router;
+const init = (server) => {
+    server.get('/', function (req, res) {
+        res.redirect('/health');
+    });
+
+    server.use('/health', healthRouter);
+    server.use('/users', usersRouter);
+}
+
+module.exports = {
+    init
+}
