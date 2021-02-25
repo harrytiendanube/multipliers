@@ -1,6 +1,5 @@
+const logger = require('./logger')
+
 module.exports = {
-    logger: {
-        level: 'debug',
-        format: 'common'
-    }
+    logger
 }
