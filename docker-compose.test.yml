@@ -16,6 +16,7 @@ services:
       - ./src/config:/usr/src/app/config
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
+      - ./src/tests/:/usr/src/app/tests/
       - ./src/views:/usr/src/app/views
       - ./src/app.js:/usr/src/app/app.js
-    command: ["nodemon", "--inspect=0.0.0.0:9229", "./bin/www"]
+    command: ["npm", "--inspect=0.0.0.0:9229", "run", "test"]
