@@ -1,5 +1,4 @@
 const healthRouter = require('./health')
-const usersRouter = require('./users')
 
 
 const init = (server) => {
@@ -8,7 +7,6 @@ const init = (server) => {
     });
 
     server.use('/health', healthRouter);
-    server.use('/users', usersRouter);
 }
 
 module.exports = {
