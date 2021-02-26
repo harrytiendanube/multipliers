@@ -12,7 +12,7 @@ const getNumberValue = (number) => {
     } else if(multiploTres){
         return 'Type 1'
     } else {
-        return number;
+        return number
     }
 }
 
@@ -27,7 +27,7 @@ const printPartOne = () => {
     const values = getRangeValue(numbers)
     values.forEach(element => {
         console.log(element)
-    });
+    })
 }
 
 const isMultiploTres = (number) => {

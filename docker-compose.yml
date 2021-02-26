@@ -15,6 +15,7 @@ services:
       - ./src/bin:/usr/src/app/bin
       - ./docker/config:/usr/src/app/config
       - ./src/config/index.js:/usr/src/app/config/index.js
+      - ./src/error:/usr/src/app/error
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
       - ./src/services:/usr/src/app/services

@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const healthService = require('../services/health')
 
 /* GET health status. */
@@ -9,6 +9,6 @@ router.get('/', function(req, res, next) {
   }).catch(err => {
     res.status(500).send(err)
   })
-});
+})
 
-module.exports = router;
+module.exports = router

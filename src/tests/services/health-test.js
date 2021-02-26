@@ -9,12 +9,12 @@ const originalCheckService = health.__get__("checkService")
 test.after.always('cleanup', t => {
     nock.cleanAll()
 	health.__set__("checkService", originalCheckService)
-});
+})
 
 test('check() should resolve with {status:"OK"} when dependencies are ok', async t => {
     const revert = health.__set__("checkService", () => {
         return new Promise((resolve, reject) => resolve())
-    });
+    })
     return health.check()
         .then(data => {
             t.deepEqual(data, {status:'OK'})
@@ -27,8 +27,8 @@ test('check() should resolve with {status:"OK"} when dependencies are ok', async
 test('check() should reject when dependencies are not ok', async t => {
     const revert = health.__set__("checkService", () => {
         return new Promise((resolve, reject) => reject(new Error('error')))
-    });
-    return t.throwsAsync(health.check());
+    })
+    return t.throwsAsync(health.check())
 })
 
 test('checkService() should resolve when dependency fetch is OK', async t => {

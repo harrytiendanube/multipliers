@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const fetch = require("node-fetch")
 
 const config = require('../config')
 const logger = require('../utils/logger')
@@ -35,7 +35,7 @@ const check = () => {
         }).catch(err => {
             reject(err)
         })
-    });
+    })
 }
 
 module.exports = {
