@@ -16,6 +16,7 @@ services:
       - ./docker/config:/usr/src/app/config
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
+      - ./src/services:/usr/src/app/services
       - ./src/utils:/usr/src/app/utils
       - ./src/views:/usr/src/app/views
       - ./src/app.js:/usr/src/app/app.js
