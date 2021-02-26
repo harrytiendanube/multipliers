@@ -14,6 +14,9 @@ const checkService = () => new Promise((resolve, reject) => {
     logger.log(`Checking dependency ${config.externalServices.healthDependencyUrl}`, 'debug')
     fetch(config.externalServices.healthDependencyUrl).then(response => {
         logger.log(`Dependency ${config.externalServices.healthDependencyUrl} OK`, 'debug')
+        if(!response.ok){
+            throw new Error(response.status)
+        }
         resolve()
     }).catch(err => {
         logger.log(`Error on ${config.externalServices.healthDependencyUrl}: ${err}`, 'debug')

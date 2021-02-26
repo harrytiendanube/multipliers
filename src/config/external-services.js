@@ -1,3 +1,3 @@
 module.exports = {
-    healthDependencyUrl: 'http://www.google.com'
+    healthDependencyUrl: 'http://www.google.com/'
 }
