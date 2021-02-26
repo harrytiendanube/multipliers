@@ -21,4 +21,5 @@ services:
       - ./src/utils:/usr/src/app/utils
       - ./src/views:/usr/src/app/views
       - ./src/app.js:/usr/src/app/app.js
-    command: ["npm", "--inspect=0.0.0.0:9229", "run", "test"]
+    # command: ["npm", "--inspect=0.0.0.0:9229", "run", "test"]
+    command: ["npm", "run", "coverage"]
