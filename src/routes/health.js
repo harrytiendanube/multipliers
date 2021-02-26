@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   healthService.check().then(status => {
     res.send(status)
   }).catch(err => {
-    next(err)
+    res.status(500).send(err)
   })
 });
 

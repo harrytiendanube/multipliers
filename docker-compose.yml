@@ -14,6 +14,7 @@ services:
     volumes: 
       - ./src/bin:/usr/src/app/bin
       - ./docker/config:/usr/src/app/config
+      - ./src/config/index.js:/usr/src/app/config/index.js
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
       - ./src/services:/usr/src/app/services
