@@ -11,20 +11,19 @@ const getKey = (multiploTres, multiploCinco) => {
     return 10 * cinco + tres
 }
 
-const getNumberValue = (number) => {
-    const tres = isMultiploTres(number)
-    const cinco = isMultiploCinco(number)
-
-    const key = getKey(tres, cinco)
-
-    return valueFunctions[key](number)
-}
-
 const isMultiploTres = (number) => {
     return number % 3 == 0
 }
 const isMultiploCinco = (number) => {
     return number % 5 == 0
+}
+
+const getNumberValue = (number) => {
+    const tres = isMultiploTres(number)
+    const cinco = isMultiploCinco(number)
+    const key = getKey(tres, cinco)
+
+    return valueFunctions[key](number)
 }
 
 module.exports = {
