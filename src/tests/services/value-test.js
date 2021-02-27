@@ -31,7 +31,6 @@ test('addValue should throw AlreadyExistsError if the number is present in the n
     const error = t.throws(() => value.addValue(12), {instanceOf: AlreadyExistsError})
     resetValues()
 })
-
 test('addValue should add proper number-value entry if the number is not present ', t => {
     const testValues = {}
     const resetValues = value.__set__('values', testValues)
