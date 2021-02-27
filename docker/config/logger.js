@@ -1,4 +1,4 @@
 module.exports = {
-    level: 'debug',
+    level: 'warn',
     format: 'dev'
 }
