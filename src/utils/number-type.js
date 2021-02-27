@@ -1,5 +1,3 @@
-const range = require('./range')
-
 const valueFunctions = {
     0: number => number,
     1: number => 'Type 1',
@@ -22,20 +20,6 @@ const getNumberValue = (number) => {
     return valueFunctions[key](number)
 }
 
-const getRangeValue = (range) => {
-    return range.map(element => {
-        return getNumberValue(element)
-    })
-}
-
-const printPartOne = () => {
-    const numbers = range.createRange()
-    const values = getRangeValue(numbers)
-    values.forEach(element => {
-        console.log(element)
-    })
-}
-
 const isMultiploTres = (number) => {
     return number % 3 == 0
 }
@@ -44,6 +28,5 @@ const isMultiploCinco = (number) => {
 }
 
 module.exports = {
-    getNumberValue,
-    printPartOne
+    getNumberValue
 }

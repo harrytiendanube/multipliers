@@ -17,6 +17,7 @@ services:
       - ./docker/config:/usr/src/app/config
       - ./src/config/index.js:/usr/src/app/config/index.js
       - ./src/error:/usr/src/app/error
+      - ./src/mocks:/usr/src/app/mocks
       - ./src/public:/usr/src/app/public
       - ./src/routes:/usr/src/app/routes
       - ./src/services:/usr/src/app/services
@@ -24,5 +25,4 @@ services:
       - ./src/utils:/usr/src/app/utils
       - ./src/views:/usr/src/app/views
       - ./src/app.js:/usr/src/app/app.js
-    # command: ["npm", "--inspect=0.0.0.0:9229", "run", "test"]
     command: ["npm", "run", "coverage"]
