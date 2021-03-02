@@ -3,6 +3,21 @@ const rewire = require('rewire')
 
 const numberTpye = rewire('../../utils/number-type')
 
+// 💬 AVA Test a diferencia de JEST o JASMINE no vi que tenga un método para ejecutar
+//   los test en base a data provider, este método nos ayuda a definir escenarios con inputs y expected
+//   así evitamos código duplicado y los test son mas claros.
+//   Una practica que vi en la comunidad es hacer un loop con los casos y dentro del loop ejecutar el test
+//   for (const [expression, result] of [
+//     ['2 + 2', 4],
+//     ['2 * 3', 6],
+//     ['2 - 2', 0],
+//     ['4 / 2', 2],
+//     ['2 * 16', 32],
+//     ['2 + 8 * 2', 18]
+//   ]) {
+//     test(`${expression} = ${result}`, macro, expression, result)
+//   }
+
 test('getNumberValue para los numeros 1, 4, 16 o 9949 debe devolver el mismo valor', t => {
     t.is(numberTpye.getNumberValue(1), 1)
     t.is(numberTpye.getNumberValue(4), 4)
@@ -25,6 +40,11 @@ test('getNumberValue para los numeros 15, 30 o 150 debe devolver el valor Type 3
     t.is(numberTpye.getNumberValue(150), 'Type 3')
 })
 
+// 💬  Me cuesta entender estos escenarios planteados, 
+//    entiendo que se intenta testear métodos "privado",
+//    si intentamos hacer pruebas de metodos privados acomplaríamos
+//    los test a los detalles de implementación, recomendaría testearlos
+//    a través de un método publico.
 test('getKey should return 0 if number is neither multiple of 3 nor 5', t => {
     const getKey = numberTpye.__get__('getKey')
     t.is(getKey(false, false), 0)

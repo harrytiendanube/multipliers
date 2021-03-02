@@ -25,6 +25,17 @@ const checkService = () => new Promise((resolve, reject) => {
 })
 
 const check = () => {
+// ⚠️  No es necesario `new Promise`, Promise.all ya es una 
+//    promesa y la return de .then sería el status:OK ej.
+// ```
+// return Promise.all([
+//         checkService()
+//     ]).then(() => ({
+//             status: 'OK'
+//     })).catch(err => {
+//         reject(err)
+//     })
+// ```
     return new Promise((resolve, reject) => {
         Promise.all([
             checkService()
@@ -32,6 +43,7 @@ const check = () => {
             resolve({
                 status: 'OK'
             })
+           
         }).catch(err => {
             reject(err)
         })

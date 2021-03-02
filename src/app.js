@@ -10,12 +10,15 @@ const config = require('./config')
 var app = express();
 
 // view engine setup
+// ❌ view y view engine no son funcionalidades requeridas ni usadas para el desafio
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger(config.logger.format || 'dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// ❌ cookieParser y express.static engine no son funcionalidades requeridas ni usadas para el desafio
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -1,3 +1,8 @@
+// ⚠️ La solución aplicada cumple con la funcionalidad pero no es la solución esperada.
+//   Se esperaba que se resuelva a través de patrones de diseño. Factory + Decorator
+//   El contra de esta solución es que estamos agregando una nueva regla de negocio
+//   que nos obliga a conocer, manejar y mantener los valores 0,1,10,11. 
+
 const valueFunctions = {
     0: number => number,
     1: number => 'Type 1',

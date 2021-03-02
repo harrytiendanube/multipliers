@@ -7,7 +7,11 @@ const init = (server) => {
         res.redirect('/health')
     })
 
+
     server.use('/health', healthRouter)
+// ⚠️ Recomendaría "/multipliers" como nombre del recurso, 
+//   "value" es un nombre genérico y no hace referencia a 
+//   la funcionalidad que se estaría consumiento
     server.use('/value', valueRouter)
 }
 
